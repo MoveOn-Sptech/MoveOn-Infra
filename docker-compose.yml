@@ -1,0 +1,34 @@
+services:
+  database:
+    image: henryfranz/moveon-database:1.0
+    container_name: moveon-database
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_DATABASE: ${DB_DATABASE}
+    ports:
+      - 3307:3306
+    networks:
+      - moveon-network
+    volumes:
+      - ./init-scripts:/docker-entrypoint-initdb.d
+      - moveon-database-data:/var/lib/mysql
+  website:
+    image: henryfranz/moveon-web-site:1.0
+    container_name: moveon-web-site
+    restart: always
+    ports:
+      - ${APP_PORT}:${APP_PORT}
+    networks:
+      - moveon-network
+    env_file:
+      - .env
+    depends_on:
+      - database
+
+networks:
+  moveon-network:
+    driver: bridge
+
+volumes:
+  moveon-database-data:
