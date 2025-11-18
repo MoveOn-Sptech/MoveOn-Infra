@@ -11,7 +11,6 @@ CREATE TABLE IF NOT EXISTS usuario (
     dataCadastro DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
-
 CREATE TABLE logs (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     tipo VARCHAR(50),
@@ -30,6 +29,7 @@ CREATE TABLE Rodovia (
     denominacaoRodovia VARCHAR(45),
     municipioRodovia VARCHAR(45),
     regionalDer VARCHAR(45),
+    regionalAdmSp VARCHAR(45),
     fkConcessionaria INT NOT NULL, -- Chave estrangeira para Concessonaeia
     FOREIGN KEY (fkConcessionaria) REFERENCES Concessionaria(idConcessionaria)
 
