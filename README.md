@@ -26,16 +26,16 @@ nano .env
 
 Exemplo de configuração:
 ```env
-APP_PORT=80
-APP_HOST=0.0.0.0
-AMBIENTE_PROCESSO=producao
+APP_PORT=
+APP_HOST=
+AMBIENTE_PROCESSO=
 
 # DATABASE
-DB_HOST=database
-DB_DATABASE=moveon
-DB_USER=root
-DB_PASSWORD=urubu100
-DB_PORT=3306
+DB_HOST=
+DB_DATABASE=
+DB_USER=
+DB_PASSWORD=
+DB_PORT=
 ```
 
 ---
