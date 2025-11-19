@@ -30,12 +30,26 @@ APP_PORT=
 APP_HOST=
 AMBIENTE_PROCESSO=
 
-# DATABASE
+# DATABASE 
+
 DB_HOST=
 DB_DATABASE=
 DB_USER=
 DB_PASSWORD=
 DB_PORT=
+
+# Credenciais de usuario aws
+
+AWS_ACCESS_KEY_ID=
+AWS_SECRET_ACCESS_KEY=
+AWS_SESSION_TOKEN=
+
+# Credenciais de bucket s3 da base de dados
+AWS_BUCKET_NAME=
+AWS_BUCKET_KEY_OBJECT=
+
+# Credencias do SLACK
+SLACK_BOT_TOKEN=
 ```
 
 ---
