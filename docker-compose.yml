@@ -13,11 +13,7 @@ services:
     volumes:
       - ./init-scripts:/docker-entrypoint-initdb.d
       - moveon-database-data:/var/lib/mysql
-    healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
-      interval: 2s
-      timeout: 2s
-      retries: 5
+
   website:
     image: henryfranz/moveon-web-site:1.0
     container_name: moveon-web-site
@@ -28,20 +24,6 @@ services:
       - moveon-network
     env_file:
       - .env
-    depends_on:
-      database:
-        condition: service_healthy
-  etl:
-    image: henryfranz/moveon-etl:1.0
-    container_name: moveon-etl
-    networks:
-      - moveon-network
-    env_file:
-      - .env
-    depends_on:
-      database:
-        condition: service_healthy
-
 networks:
   moveon-network:
     driver: bridge
