@@ -54,7 +54,7 @@ SLACK_BOT_TOKEN=
 
 ---
 
-## 🐳 Instalar Docker Compose
+## 🐳 Instalar Docker e Docker Compose
 
 Certifique-se de ter o **Docker** e o **Docker Compose** instalados.
 
@@ -63,7 +63,15 @@ Certifique-se de ter o **Docker** e o **Docker Compose** instalados.
 sudo apt update && sudo apt upgrade -y
 ```
 
+### Instalar Docker
+
+```bash
+sudo apt install docker.io
+sudo systemctl start docker
+```
+
 ### Instalar Docker Compose
+
 ```bash
 sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
@@ -73,7 +81,9 @@ sudo chmod +x /usr/local/bin/docker-compose
 ```bash
 docker-compose version
 ```
-
+```bash
+docker -v
+```
 ---
 
 ## ▶️ Rodar o projeto
