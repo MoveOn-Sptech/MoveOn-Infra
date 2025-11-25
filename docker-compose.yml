@@ -31,7 +31,8 @@ services:
     depends_on:
       database:
         condition: service_healthy
-  : image: henryfranz/moveon-etl:1.0
+  etl:
+    image: henryfranz/moveon-etl:1.0
     container_name: moveon-etl
     networks:
       - moveon-network
