@@ -90,7 +90,7 @@ docker -v
 
 Para subir os containers, execute:
 ```bash
-docker compose up
+sudo docker-compose up
 ```
 
 ---
@@ -99,9 +99,9 @@ docker compose up
 - Certifique-se de que as portas configuradas no `.env` não estejam em uso por outros serviços.
 - Caso queira rodar em segundo plano, utilize:
   ```bash
-  docker compose up -d --build
+  sudo docker-compose up -d --build
   ```
 - Para parar os containers:
   ```bash
-  docker compose down -v
+  sudo docker-compose down -v
   ```
